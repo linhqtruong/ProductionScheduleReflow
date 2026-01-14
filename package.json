@@ -8,13 +8,21 @@
     "build": "tsc",
     "start": "ts-node src/example.ts",
     "demo": "ts-node src/example.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
-  "keywords": ["production", "schedule", "reflow", "optimization"],
+  "keywords": [
+    "production",
+    "schedule",
+    "reflow",
+    "optimization"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^25.0.8",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
