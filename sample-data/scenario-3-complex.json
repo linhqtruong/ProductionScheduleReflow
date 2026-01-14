@@ -1,0 +1,165 @@
+{
+  "workOrders": [
+    {
+      "docId": "wo-201",
+      "docType": "workOrder",
+      "data": {
+        "workOrderNumber": "WO-201",
+        "manufacturingOrderId": "mo-201",
+        "workCenterId": "wc-line1",
+        "startDate": "2024-01-15T08:00:00Z",
+        "endDate": "2024-01-15T11:00:00Z",
+        "durationMinutes": 180,
+        "isMaintenance": false,
+        "dependsOnWorkOrderIds": []
+      }
+    },
+    {
+      "docId": "wo-202",
+      "docType": "workOrder",
+      "data": {
+        "workOrderNumber": "WO-202",
+        "manufacturingOrderId": "mo-202",
+        "workCenterId": "wc-line2",
+        "startDate": "2024-01-15T08:00:00Z",
+        "endDate": "2024-01-15T12:00:00Z",
+        "durationMinutes": 240,
+        "isMaintenance": false,
+        "dependsOnWorkOrderIds": []
+      }
+    },
+    {
+      "docId": "wo-203",
+      "docType": "workOrder",
+      "data": {
+        "workOrderNumber": "WO-203",
+        "manufacturingOrderId": "mo-203",
+        "workCenterId": "wc-line1",
+        "startDate": "2024-01-15T11:00:00Z",
+        "endDate": "2024-01-15T14:00:00Z",
+        "durationMinutes": 180,
+        "isMaintenance": false,
+        "dependsOnWorkOrderIds": ["wo-201"]
+      }
+    },
+    {
+      "docId": "wo-204",
+      "docType": "workOrder",
+      "data": {
+        "workOrderNumber": "WO-204",
+        "manufacturingOrderId": "mo-204",
+        "workCenterId": "wc-line1",
+        "startDate": "2024-01-15T14:00:00Z",
+        "endDate": "2024-01-15T17:00:00Z",
+        "durationMinutes": 180,
+        "isMaintenance": false,
+        "dependsOnWorkOrderIds": ["wo-201", "wo-202"]
+      }
+    },
+    {
+      "docId": "wo-205",
+      "docType": "workOrder",
+      "data": {
+        "workOrderNumber": "WO-205",
+        "manufacturingOrderId": "mo-205",
+        "workCenterId": "wc-line2",
+        "startDate": "2024-01-15T12:00:00Z",
+        "endDate": "2024-01-15T16:00:00Z",
+        "durationMinutes": 240,
+        "isMaintenance": false,
+        "dependsOnWorkOrderIds": ["wo-202"]
+      }
+    }
+  ],
+  "workCenters": [
+    {
+      "docId": "wc-line1",
+      "docType": "workCenter",
+      "data": {
+        "name": "Extrusion Line 1",
+        "shifts": [
+          { "dayOfWeek": 1, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 2, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 3, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 4, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 5, "startHour": 8, "endHour": 17 }
+        ],
+        "maintenanceWindows": [
+          {
+            "startDate": "2024-01-15T12:00:00Z",
+            "endDate": "2024-01-15T13:00:00Z",
+            "reason": "Lunch break maintenance"
+          }
+        ]
+      }
+    },
+    {
+      "docId": "wc-line2",
+      "docType": "workCenter",
+      "data": {
+        "name": "Extrusion Line 2",
+        "shifts": [
+          { "dayOfWeek": 1, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 2, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 3, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 4, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 5, "startHour": 8, "endHour": 17 }
+        ],
+        "maintenanceWindows": []
+      }
+    }
+  ],
+  "manufacturingOrders": [
+    {
+      "docId": "mo-201",
+      "docType": "manufacturingOrder",
+      "data": {
+        "manufacturingOrderNumber": "MO-201",
+        "itemId": "item-pipe-6in",
+        "quantity": 1000,
+        "dueDate": "2024-01-20T00:00:00Z"
+      }
+    },
+    {
+      "docId": "mo-202",
+      "docType": "manufacturingOrder",
+      "data": {
+        "manufacturingOrderNumber": "MO-202",
+        "itemId": "item-pipe-4in",
+        "quantity": 2000,
+        "dueDate": "2024-01-22T00:00:00Z"
+      }
+    },
+    {
+      "docId": "mo-203",
+      "docType": "manufacturingOrder",
+      "data": {
+        "manufacturingOrderNumber": "MO-203",
+        "itemId": "item-pipe-8in",
+        "quantity": 500,
+        "dueDate": "2024-01-25T00:00:00Z"
+      }
+    },
+    {
+      "docId": "mo-204",
+      "docType": "manufacturingOrder",
+      "data": {
+        "manufacturingOrderNumber": "MO-204",
+        "itemId": "item-pipe-12in",
+        "quantity": 300,
+        "dueDate": "2024-01-24T00:00:00Z"
+      }
+    },
+    {
+      "docId": "mo-205",
+      "docType": "manufacturingOrder",
+      "data": {
+        "manufacturingOrderNumber": "MO-205",
+        "itemId": "item-pipe-3in",
+        "quantity": 5000,
+        "dueDate": "2024-01-26T00:00:00Z"
+      }
+    }
+  ]
+}
+

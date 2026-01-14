@@ -1,0 +1,37 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Naologic Brand Colors */
+  --naologic-blue: #007BFF;
+  --naologic-blue-dark: #0056b3;
+  --naologic-blue-light: #4da3ff;
+  --naologic-gray: #6C757D;
+  --naologic-gray-light: #f8f9fa;
+  --naologic-gray-dark: #495057;
+  --naologic-white: #FFFFFF;
+  --naologic-text: #212529;
+  --naologic-text-light: #6C757D;
+
+  color: #212529;
+  background-color: #FFFFFF;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+}

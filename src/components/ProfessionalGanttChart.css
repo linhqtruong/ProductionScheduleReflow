@@ -1,0 +1,116 @@
+.gantt-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gantt-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.scale-selector {
+  display: flex;
+  align-items: center;
+}
+
+.scale-select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #212529;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.scale-select:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8f9fa;
+  padding: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.zoom-button {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  color: #212529;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.zoom-button:hover:not(:disabled) {
+  background-color: #007BFF;
+  color: #ffffff;
+  border-color: #007BFF;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.zoom-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 123, 255, 0.2);
+}
+
+.zoom-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: #f8f9fa;
+}
+
+.zoom-button.zoom-reset {
+  font-size: 1rem;
+  margin-left: 0.25rem;
+}
+
+.zoom-level {
+  color: #6C757D;
+  font-size: 0.875rem;
+  min-width: 45px;
+  text-align: center;
+  font-weight: 500;
+  padding: 0 0.5rem;
+}
+
+.gantt-chart-wrapper {
+  max-height: 800px;
+}
+
+.gantt-chart-zoom-container {
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .gantt-chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gantt-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

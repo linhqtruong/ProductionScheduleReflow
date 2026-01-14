@@ -1,0 +1,47 @@
+{
+  "workOrders": [
+    {
+      "docId": "wo-test-001",
+      "docType": "workOrder",
+      "data": {
+        "workOrderNumber": "WO-TEST-001",
+        "manufacturingOrderId": "mo-test-001",
+        "workCenterId": "wc-line1",
+        "startDate": "2024-01-15T16:00:00Z",
+        "endDate": "2024-01-15T18:00:00Z",
+        "durationMinutes": 120,
+        "isMaintenance": false,
+        "dependsOnWorkOrderIds": []
+      }
+    }
+  ],
+  "workCenters": [
+    {
+      "docId": "wc-line1",
+      "docType": "workCenter",
+      "data": {
+        "name": "Test Line 1",
+        "shifts": [
+          { "dayOfWeek": 1, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 2, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 3, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 4, "startHour": 8, "endHour": 17 },
+          { "dayOfWeek": 5, "startHour": 8, "endHour": 17 }
+        ],
+        "maintenanceWindows": []
+      }
+    }
+  ],
+  "manufacturingOrders": [
+    {
+      "docId": "mo-test-001",
+      "docType": "manufacturingOrder",
+      "data": {
+        "manufacturingOrderNumber": "MO-TEST-001",
+        "itemId": "ITEM-001",
+        "quantity": 100,
+        "dueDate": "2024-01-20T00:00:00Z"
+      }
+    }
+  ]
+}
