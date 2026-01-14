@@ -14,12 +14,21 @@ export class Scheduler {
    * Creates a schedule from a list of tasks using a basic dependency-aware algorithm
    */
   schedule(tasks: Task[]): Schedule {
+    if (!Array.isArray(tasks)) {
+      throw new Error('Tasks must be an array');
+    }
+
     const scheduledTasks: ScheduledTask[] = [];
     const taskMap = new Map<string, Task>();
     const completionTimes = new Map<string, number>();
 
     // Build task map
-    tasks.forEach(task => taskMap.set(task.id, task));
+    tasks.forEach(task => {
+      if (!task || !task.id) {
+        throw new Error('Invalid task: all tasks must have an id');
+      }
+      taskMap.set(task.id, task);
+    });
 
     // Sort tasks by priority (higher first) and then by dependencies
     const sortedTasks = this.topologicalSort(tasks);
@@ -81,7 +90,7 @@ export class Scheduler {
     const visit = (taskId: string) => {
       if (visited.has(taskId)) return;
       if (temp.has(taskId)) {
-        throw new Error(`Circular dependency detected involving task ${taskId}`);
+        throw new Error(`Circular dependency detected in task dependency chain involving task ${taskId}`);
       }
 
       temp.add(taskId);

@@ -8,6 +8,11 @@ export class ScheduleUtils {
    * Prints a schedule in a readable format
    */
   static printSchedule(schedule: Schedule): void {
+    if (!schedule || !Array.isArray(schedule.tasks)) {
+      console.log('Invalid schedule: no tasks to display');
+      return;
+    }
+
     console.log('\n=== Production Schedule ===');
     console.log(`Total Duration: ${schedule.totalDuration} time units\n`);
 
@@ -131,6 +136,10 @@ export class ScheduleUtils {
     original: Schedule,
     optimized: Schedule
   ): { durationImprovement: number; percentImprovement: number } {
+    if (original.totalDuration < 0 || optimized.totalDuration < 0) {
+      throw new Error('Invalid schedule: totalDuration cannot be negative');
+    }
+
     const durationImprovement = original.totalDuration - optimized.totalDuration;
     const percentImprovement = 
       original.totalDuration > 0 

@@ -9,6 +9,10 @@ export class ReflowOptimizer {
    * while respecting dependencies
    */
   reflow(schedule: Schedule): Schedule {
+    if (!schedule || !Array.isArray(schedule.tasks)) {
+      throw new Error('Invalid schedule: schedule must have a tasks array');
+    }
+
     const tasks = [...schedule.tasks];
     
     // Sort tasks by start time
